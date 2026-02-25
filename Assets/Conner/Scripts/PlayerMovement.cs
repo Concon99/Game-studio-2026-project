@@ -8,10 +8,25 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 Movement;
 
+    public string Direction;
+
     private void Update()
     {
         Movement.x = Input.GetAxisRaw("Horizontal");
-        Movement.y = Input.GetAxisRaw("Vertical");    }
+        Movement.y = Input.GetAxisRaw("Vertical");
+
+
+        if (Movement.x > 0)
+            Direction = "Right";
+        else if (Movement.x < 0)
+            Direction = "Left";
+        else if (Movement.y > 0)
+            Direction = "Up";
+        else if (Movement.y < 0)
+            Direction = "Down";
+        
+        
+    }
 
     void FixedUpdate()
     {

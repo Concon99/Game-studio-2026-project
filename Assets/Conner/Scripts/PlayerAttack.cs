@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Attack : MonoBehaviour
 {
+    [SerializeField] private PlayerMovement _PlayerMovement;
+    
     public GameObject Weapon;
     public string WeaponType; //whatever this is set to will cause the Weapon gameobject to change to create different hitboxes
     public float WeaponAttackTime;
@@ -17,6 +19,29 @@ public class Attack : MonoBehaviour
             StartCoroutine(AttackCoolDown());
             StartCoroutine(WeaponAttack());
         }
+        
+        if (_PlayerMovement.Direction == "Up")
+        {
+            transform.rotation = Quaternion.Euler(-0.6f, 0f, 0);
+            transform.Rotate(-0f, 0f, 90f);
+        }
+        if (_PlayerMovement.Direction == "Left")
+        {
+            transform.rotation = Quaternion.Euler(0, -0.6f, 0);
+            transform.Rotate(0f, 0f, 180f);
+        }
+        if (_PlayerMovement.Direction == "Down")
+        {
+            transform.rotation = Quaternion.Euler(0.6f, 0f, 0);
+            transform.Rotate(0f, 0f, 270f);
+        }
+        if (_PlayerMovement.Direction == "Right")
+        {
+            transform.rotation = Quaternion.Euler(0, 0.6f, 0);
+            transform.Rotate(0f, 0f, 0f);
+        }
+
+
     }
 
 

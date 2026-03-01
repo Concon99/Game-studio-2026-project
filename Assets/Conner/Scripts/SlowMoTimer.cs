@@ -9,8 +9,13 @@ public class SlowMoTimer : MonoBehaviour
 
     private bool isCounting = false;
 
+    private bool CoolDownOver = true;
+    public float CoolDownTime;
+    
+
     void Start()
     {
+        CoolDownOver = true;
         slider.gameObject.SetActive(true);
         slider.value = 1f;
     }
@@ -18,9 +23,10 @@ public class SlowMoTimer : MonoBehaviour
     void Update()
     {
         // Start the slider countdown only when time is slowed
-        if (Time.timeScale < 1f && !isCounting)
+        if (Time.timeScale < 1f && !isCounting && CoolDownOver)
         {
             StartCoroutine(FillDownSlider());
+            StartCoroutine(SlowMoCoolDown());
         }
     }
 
@@ -46,5 +52,12 @@ public class SlowMoTimer : MonoBehaviour
         slider.gameObject.SetActive(false);
 
         isCounting = false;
+    }
+
+    IEnumerator SlowMoCoolDown()
+    {
+        CoolDownOver = false;
+        yield return new WaitForSeconds(CoolDownTime);
+        CoolDownOver = true;
     }
 }

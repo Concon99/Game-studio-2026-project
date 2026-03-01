@@ -10,17 +10,22 @@ public class BlurActive : MonoBehaviour
 
     private float originalTimeScale;
     private bool isSlowing = false;
+    
+    private bool CoolDownOver = true;
+    public float CoolDownTime;
 
     void Start()
     {
+        CoolDownTime += slowDuration;
         originalTimeScale = Time.timeScale;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isSlowing)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isSlowing && CoolDownOver)
         {
             StartCoroutine(DoBulletTime());
+            StartCoroutine(SlowMoCoolDown());
         }
     }
 
@@ -57,5 +62,12 @@ public class BlurActive : MonoBehaviour
             Time.fixedDeltaTime = 0.02f * Time.timeScale; // keep physics stable
             yield return null;
         }
+    }
+    
+    IEnumerator SlowMoCoolDown()
+    {
+        CoolDownOver = false;
+        yield return new WaitForSeconds(CoolDownTime);
+        CoolDownOver = true;
     }
 }

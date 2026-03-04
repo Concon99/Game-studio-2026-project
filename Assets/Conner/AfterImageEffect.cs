@@ -9,6 +9,8 @@ public class AfterImageEffect : MonoBehaviour
     public float alpha = 0.5f;       // starting transparency
     public bool followAnimations = true;
 
+    private int ColorAmount;
+
     private float timer;
 
     void Update()
@@ -25,9 +27,45 @@ public class AfterImageEffect : MonoBehaviour
 
     void SpawnGhost()
     {
+        ColorAmount += 1;
+        if (ColorAmount > 7)
+        {
+            ColorAmount = 1;
+        }
+        
+        
         // Clone the object independently
         GameObject ghost = Instantiate(gameObject, transform.position, transform.rotation);
         ghost.transform.parent = null; // DO NOT make it a child
+        
+        if (ColorAmount == 1)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        if (ColorAmount == 2)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = Color.orange;
+        }
+        if (ColorAmount == 3)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
+        if (ColorAmount == 4)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        if (ColorAmount == 5)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        if (ColorAmount == 6)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = Color.purple;
+        }
+        if (ColorAmount == 7)
+        {
+            ghost.GetComponent<SpriteRenderer>().color = Color.pink;
+        }
 
         // Remove all scripts
         MonoBehaviour[] scripts = ghost.GetComponentsInChildren<MonoBehaviour>();

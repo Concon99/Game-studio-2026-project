@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556d19176c7556f40aaa4d659e295839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowTimeScale: 0.1
+  slowTimeScale: 0.3
   transitionSpeed: 4
   slowDuration: 5
   CoolDownTime: 5
@@ -486,8 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f904b177a69dd5749909be111f28b895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0.1
-  fadeTime: 1
+  spawnRate: 0.3
+  fadeTime: 1.5
   alpha: 0.5
   followAnimations: 1
 --- !u!1 &1359627265

@@ -8,11 +8,15 @@ public class BlurActive : MonoBehaviour
     public float transitionSpeed = 4f;   // how fast time lerps
     public float slowDuration = 1.5f;    // how long slow motion lasts
 
+    public bool SlowMoOver = false;      // set to true to immediately exit slow mo
     private float originalTimeScale;
     private bool isSlowing = false;
-    
+
     private bool CoolDownOver = true;
     public float CoolDownTime;
+
+    [SerializeField] private BackGroundSpawn _BackGroundSpawn;
+    [SerializeField] private MiniGame _MiniGame;
 
     void Start()
     {
@@ -31,23 +35,41 @@ public class BlurActive : MonoBehaviour
 
     IEnumerator DoBulletTime()
     {
+        _BackGroundSpawn.BulletTimeActive();
+        _MiniGame.StartMiniGame();
         isSlowing = true;
+        SlowMoOver = false;
 
         // Smoothly slow down
         yield return StartCoroutine(SmoothTime(slowTimeScale));
 
-        // Wait for the duration of slow motion (real time, not scaled)
+        // Wait for the duration of slow motion OR until SlowMoOver is true
         float timer = 0f;
         while (timer < slowDuration)
         {
+            if (SlowMoOver)
+            {
+                print("Won Mini game!");
+                GameManager.Instance.Suceed = true;
+                break;
+            }
+
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
 
+        if (!GameManager.Instance.Suceed)
+        {
+            print("lost mini game");
+            GameManager.Instance.Suceed = false;
+        }
+        
         // Smoothly return to normal time
         yield return StartCoroutine(SmoothTime(originalTimeScale));
+        _BackGroundSpawn.BulletTimeDeActive();
 
         isSlowing = false;
+        SlowMoOver = false;
     }
 
     IEnumerator SmoothTime(float target)
@@ -63,7 +85,7 @@ public class BlurActive : MonoBehaviour
             yield return null;
         }
     }
-    
+
     IEnumerator SlowMoCoolDown()
     {
         CoolDownOver = false;

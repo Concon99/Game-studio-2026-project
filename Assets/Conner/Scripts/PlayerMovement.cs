@@ -17,13 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (Movement.x > 0)
-            Direction = "Right";
-        else if (Movement.x < 0)
-            Direction = "Left";
-        else if (Movement.y > 0)
             Direction = "Up";
-        else if (Movement.y < 0)
+        else if (Movement.x < 0)
             Direction = "Down";
+        else if (Movement.y > 0)
+            Direction = "Left";
+        else if (Movement.y < 0)
+            Direction = "Right";
         
         
     }

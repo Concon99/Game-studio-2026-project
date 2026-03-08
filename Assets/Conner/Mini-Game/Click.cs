@@ -7,13 +7,12 @@ public class Click : MonoBehaviour
     public int DestroyTime;
 
 
-    void Awake()
+    void Start()
     {
         StartCoroutine(DestroyCount());
     }
     void OnMouseDown()
     {
-        print("clicked!");
         GameManager.Instance.Points += 1;
         //code to increase points by 1
         Destroy(gameObject);
@@ -21,7 +20,8 @@ public class Click : MonoBehaviour
 
     IEnumerator DestroyCount()
     {
-        yield return new WaitForSeconds(DestroyTime);
+        print("start destroy count!");
+        yield return new WaitForSecondsRealtime(DestroyTime);
         Destroy(gameObject);
     }
 }

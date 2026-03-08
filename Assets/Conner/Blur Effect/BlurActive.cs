@@ -89,7 +89,7 @@ public class BlurActive : MonoBehaviour
     IEnumerator SlowMoCoolDown()
     {
         CoolDownOver = false;
-        yield return new WaitForSeconds(CoolDownTime);
+        yield return new WaitForSecondsRealtime(CoolDownTime);
         CoolDownOver = true;
     }
 }

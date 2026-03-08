@@ -16,6 +16,9 @@ public class MiniGame : MonoBehaviour
 
     public void StartMiniGame()
     {
+        GameManager.Instance.Suceed = false;
+        i = 0;
+        DestroyAllChildren();
         StartCoroutine(MiniGame1());
     }
 
@@ -29,9 +32,9 @@ public class MiniGame : MonoBehaviour
 
             Vector2 spawnPos = new Vector2(randomX, randomY);
 
-            Instantiate(Click, spawnPos, Quaternion.identity);
+            Instantiate(Click, spawnPos, Quaternion.identity, transform);
             
-            yield return new WaitForSeconds(MiniGame1Spawn);
+            yield return new WaitForSecondsRealtime(MiniGame1Spawn);
             i++;
         }
 
@@ -40,8 +43,17 @@ public class MiniGame : MonoBehaviour
             _BlurActive.SlowMoOver = true;
             GameManager.Instance.Suceed = true;
         }
+        
         GameManager.Instance.Points = 0;
 
         yield return true;
+    }
+    
+    public void DestroyAllChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

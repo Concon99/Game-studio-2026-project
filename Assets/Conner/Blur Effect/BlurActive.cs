@@ -35,6 +35,7 @@ public class BlurActive : MonoBehaviour
 
     IEnumerator DoBulletTime()
     {
+        GameManager.Instance.BulletTimeActive = true;
         _BackGroundSpawn.BulletTimeActive();
         _MiniGame.StartMiniGame();
         isSlowing = true;
@@ -63,6 +64,7 @@ public class BlurActive : MonoBehaviour
             print("lost mini game");
             GameManager.Instance.Suceed = false;
         }
+        GameManager.Instance.BulletTimeActive = false;
         
         // Smoothly return to normal time
         yield return StartCoroutine(SmoothTime(originalTimeScale));

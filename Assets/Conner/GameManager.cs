@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public int Points;
     public bool Suceed = false;
+    public bool BulletTimeActive = false;
     
     public static GameManager Instance;  // Singleton instance
 

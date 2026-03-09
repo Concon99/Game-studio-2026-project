@@ -20,7 +20,6 @@ public class Click : MonoBehaviour
 
     IEnumerator DestroyCount()
     {
-        print("start destroy count!");
         yield return new WaitForSecondsRealtime(DestroyTime);
         Destroy(gameObject);
     }

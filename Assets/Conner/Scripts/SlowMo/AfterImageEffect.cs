@@ -10,7 +10,6 @@ public class AfterImageEffect : MonoBehaviour
     public bool followAnimations = true;
 
     private int ColorAmount;
-
     private float timer;
 
     void Update()
@@ -32,39 +31,48 @@ public class AfterImageEffect : MonoBehaviour
         {
             ColorAmount = 1;
         }
-        
-        
+
         // Clone the object independently
         GameObject ghost = Instantiate(gameObject, transform.position, transform.rotation);
         ghost.transform.parent = null; // DO NOT make it a child
-        
+
+        // SET SORTING ORDER BEHIND ORIGINAL
+        SpriteRenderer original = GetComponent<SpriteRenderer>();
+        SpriteRenderer ghostRenderer = ghost.GetComponent<SpriteRenderer>();
+
+        if (original != null && ghostRenderer != null)
+        {
+            ghostRenderer.sortingLayerID = original.sortingLayerID;
+            ghostRenderer.sortingOrder = original.sortingOrder - 1;
+        }
+
         if (ColorAmount == 1)
         {
-            ghost.GetComponent<SpriteRenderer>().color = Color.red;
+            ghostRenderer.color = Color.blue;
         }
         if (ColorAmount == 2)
         {
-            ghost.GetComponent<SpriteRenderer>().color = Color.orange;
+            ghostRenderer.color = Color.blue;
         }
         if (ColorAmount == 3)
         {
-            ghost.GetComponent<SpriteRenderer>().color = Color.yellow;
+            ghostRenderer.color = Color.blue;
         }
         if (ColorAmount == 4)
         {
-            ghost.GetComponent<SpriteRenderer>().color = Color.green;
+            ghostRenderer.color = Color.blue;
         }
         if (ColorAmount == 5)
         {
-            ghost.GetComponent<SpriteRenderer>().color = Color.blue;
+            ghostRenderer.color = Color.blue;
         }
         if (ColorAmount == 6)
         {
-            ghost.GetComponent<SpriteRenderer>().color = Color.purple;
+            ghostRenderer.color = Color.blue;
         }
         if (ColorAmount == 7)
         {
-            ghost.GetComponent<SpriteRenderer>().color = Color.pink;
+            ghostRenderer.color = Color.blue;
         }
 
         // Remove all scripts

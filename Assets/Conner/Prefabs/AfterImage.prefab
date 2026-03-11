@@ -76,9 +76,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
+  m_Color: {r: 0.051886797, g: 0.3976694, b: 1, a: 0.09803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f904b177a69dd5749909be111f28b895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterimagePrefab: {fileID: 0}
   spawnRate: 0.05
   fadeTime: 0.3
   alpha: 0.5
+  followAnimations: 1

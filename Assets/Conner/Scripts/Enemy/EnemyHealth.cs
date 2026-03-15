@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
             float xOffset = Random.Range(-3f, 3f);
             float yOffset = Random.Range(-3f, 3);
 
-            Vector3 spawnPos = transform.position + new Vector3(xOffset + 10, yOffset, 0);
+            Vector3 spawnPos = transform.position + new Vector3(xOffset + 11, yOffset, 0);
 
             GameObject effect = Instantiate(DamageEffect, spawnPos, Quaternion.identity);
             
@@ -32,11 +32,12 @@ public class EnemyHealth : MonoBehaviour
         if (other.CompareTag("PlayerAttackUltra"))
         {
             Health -= GameManager.Instance.MiniGameDamage;
+            GameManager.Instance.MiniGameDamage *= -1;
             visualDamage = GameManager.Instance.MiniGameDamage.ToString();
             float xOffset = Random.Range(-3f, 3f);
             float yOffset = Random.Range(-3f, 3);
 
-            Vector3 spawnPos = transform.position + new Vector3(xOffset + 10, yOffset, 0);
+            Vector3 spawnPos = transform.position + new Vector3(xOffset + 11, yOffset, 0);
 
             GameObject effect = Instantiate(DamageEffect, spawnPos, Quaternion.identity);
             

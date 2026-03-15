@@ -17,6 +17,8 @@ public class BlurActive : MonoBehaviour
 
     [SerializeField] private BackGroundSpawn _BackGroundSpawn;
     [SerializeField] private MiniGame _MiniGame;
+    [SerializeField] private MiniGameAttack _MiniGameAttack;
+    
 
     void Start()
     {
@@ -52,6 +54,7 @@ public class BlurActive : MonoBehaviour
             {
                 print("Won Mini game!");
                 GameManager.Instance.Suceed = true;
+                GameManager.Instance.MiniGameDamage = 20;
                 break;
             }
 
@@ -59,13 +62,21 @@ public class BlurActive : MonoBehaviour
             yield return null;
         }
 
-        if (!GameManager.Instance.Suceed)
+        if (!GameManager.Instance.Suceed && GameManager.Instance.Points >= 1)
         {
-            print("lost mini game");
+            print("Decent minigame!");
             GameManager.Instance.Suceed = false;
+            GameManager.Instance.MiniGameDamage = 5;
         }
+        else if (GameManager.Instance.Points <= 0)
+        {
+            print("failed mini game...");
+            GameManager.Instance.MiniGameDamage = 0;
+        }
+
+        StartCoroutine(_MiniGameAttack.WeaponAttack());
         GameManager.Instance.BulletTimeActive = false;
-        
+        GameManager.Instance.Points = 0;
         // Smoothly return to normal time
         yield return StartCoroutine(SmoothTime(originalTimeScale));
         _BackGroundSpawn.BulletTimeDeActive();

@@ -44,7 +44,6 @@ public class MiniGame : MonoBehaviour
             GameManager.Instance.Suceed = true;
         }
         
-        GameManager.Instance.Points = 0;
 
         yield return true;
     }

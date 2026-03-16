@@ -7,16 +7,21 @@ public class AfterImageEffect : MonoBehaviour
     public float spawnRate = 0.1f;   // seconds between ghost frames
     public float fadeTime = 0.3f;    // duration of fade
     public float alpha = 0.5f;       // starting transparency
-    public bool followAnimations = true;
 
-    private int ColorAmount;
     private float timer;
+    private SpriteRenderer original;
+
+    void Start()
+    {
+        original = GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
         if (Time.timeScale >= 1f) return; // only during bullet time
 
         timer += Time.unscaledDeltaTime;
+
         if (timer >= spawnRate)
         {
             SpawnGhost();
@@ -26,99 +31,46 @@ public class AfterImageEffect : MonoBehaviour
 
     void SpawnGhost()
     {
-        ColorAmount += 1;
-        if (ColorAmount > 7)
-        {
-            ColorAmount = 1;
-        }
+        if (original == null) return;
 
-        // Clone the object independently
-        GameObject ghost = Instantiate(gameObject, transform.position, transform.rotation);
-        ghost.transform.parent = null; // DO NOT make it a child
+        GameObject ghost = new GameObject("AfterImage");
 
-        // SET SORTING ORDER BEHIND ORIGINAL
-        SpriteRenderer original = GetComponent<SpriteRenderer>();
-        SpriteRenderer ghostRenderer = ghost.GetComponent<SpriteRenderer>();
+        ghost.transform.position = transform.position;
+        ghost.transform.rotation = transform.rotation;
+        ghost.transform.localScale = transform.localScale;
 
-        if (original != null && ghostRenderer != null)
-        {
-            ghostRenderer.sortingLayerID = original.sortingLayerID;
-            ghostRenderer.sortingOrder = original.sortingOrder - 1;
-        }
+        SpriteRenderer ghostRenderer = ghost.AddComponent<SpriteRenderer>();
 
-        if (ColorAmount == 1)
-        {
-            ghostRenderer.color = Color.blue;
-        }
-        if (ColorAmount == 2)
-        {
-            ghostRenderer.color = Color.blue;
-        }
-        if (ColorAmount == 3)
-        {
-            ghostRenderer.color = Color.blue;
-        }
-        if (ColorAmount == 4)
-        {
-            ghostRenderer.color = Color.blue;
-        }
-        if (ColorAmount == 5)
-        {
-            ghostRenderer.color = Color.blue;
-        }
-        if (ColorAmount == 6)
-        {
-            ghostRenderer.color = Color.blue;
-        }
-        if (ColorAmount == 7)
-        {
-            ghostRenderer.color = Color.blue;
-        }
+        ghostRenderer.sprite = original.sprite;
+        ghostRenderer.flipX = original.flipX;
+        ghostRenderer.flipY = original.flipY;
+        ghostRenderer.sortingLayerID = original.sortingLayerID;
+        ghostRenderer.sortingOrder = original.sortingOrder - 1;
 
-        // Remove all scripts
-        MonoBehaviour[] scripts = ghost.GetComponentsInChildren<MonoBehaviour>();
-        foreach (MonoBehaviour script in scripts)
-        {
-            Destroy(script);
-        }
+        Color c = original.color;
+        c.a = alpha;
+        ghostRenderer.color = c;
 
-        // Remove Rigidbody2D if exists
-        Rigidbody2D rb = ghost.GetComponent<Rigidbody2D>();
-        if (rb != null) Destroy(rb);
-
-        // Freeze animation frames
-        if (followAnimations)
-        {
-            Animator[] animators = ghost.GetComponentsInChildren<Animator>();
-            foreach (Animator animator in animators)
-            {
-                animator.enabled = false;
-            }
-        }
-
-        // Fade out and destroy
-        StartCoroutine(FadeAndDestroy(ghost, fadeTime, alpha));
+        StartCoroutine(FadeAndDestroy(ghostRenderer));
     }
 
-    IEnumerator FadeAndDestroy(GameObject ghost, float duration, float startAlpha)
+    IEnumerator FadeAndDestroy(SpriteRenderer sr)
     {
-        SpriteRenderer[] renderers = ghost.GetComponentsInChildren<SpriteRenderer>();
         float t = 0f;
+        Color startColor = sr.color;
 
-        while (t < 1f)
+        while (t < fadeTime)
         {
-            t += Time.unscaledDeltaTime / duration;
-            float a = Mathf.Lerp(startAlpha, 0f, t);
+            t += Time.unscaledDeltaTime;
+            float a = Mathf.Lerp(startColor.a, 0f, t / fadeTime);
 
-            foreach (SpriteRenderer sr in renderers)
-            {
-                if (sr != null)
-                    sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, a);
-            }
+            if (sr != null)
+                sr.color = new Color(startColor.r, startColor.g, startColor.b, a);
 
             yield return null;
         }
 
-        Destroy(ghost);
+        if (sr != null)
+            Destroy(sr.gameObject);
     }
 }

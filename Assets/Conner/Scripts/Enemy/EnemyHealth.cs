@@ -22,11 +22,8 @@ public class EnemyHealth : MonoBehaviour
             GameObject effect = Instantiate(DamageEffect, spawnPos, Quaternion.identity);
             
             DamgeEffect textScript = effect.GetComponent<DamgeEffect>();
-
-            if (textScript != null)
-            {
-                textScript.ChangeText(visualDamage); // call the function
-            }
+            
+            textScript.ChangeText(visualDamage);
         }
 
         if (other.CompareTag("PlayerAttackUltra"))

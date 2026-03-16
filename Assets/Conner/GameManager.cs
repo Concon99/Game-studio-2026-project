@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int Points;
+    public float Points;
     public bool Suceed = false;
     public bool BulletTimeActive = false;
 
+    public string MiniGameType;
+
     public int MiniGameDamage;
+    
     
     public static GameManager Instance;  // Singleton instance
 

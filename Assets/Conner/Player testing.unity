@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &259449840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 356816858}
   m_Layer: 0
   m_Name: SlowMo Trigger
-  m_TagString: Untagged
+  m_TagString: Blur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -730,11 +730,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258dbbc403b91a144bd9132ec59aacbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 
   Click: {fileID: 1948397893335608657, guid: f94c08cb7dd03cc408050825d0ac1520, type: 3}
+  Pop: {fileID: 8571744978460231097, guid: c79e1dc27f457dc40be6004b0096e69f, type: 3}
+  Slide: {fileID: 567081084213563818, guid: 6e8f779847649c641839457ac30b76cc, type: 3}
   minPosition: {x: -8, y: -4}
   maxPosition: {x: 8, y: 4}
   MiniGame1Spawn: 1
+  MiniGame3Spawn: 1.5
+  spawnPos: {x: 0, y: 0}
   _BlurActive: {fileID: 356816858}
 --- !u!1 &1219044597
 GameObject:
@@ -1008,8 +1011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
-  render: {fileID: 1219044603}
-  Damage: {fileID: 4968684915899834275, guid: afc57935f30e3fd46be0cc749f11cfca, type: 3}
 --- !u!1 &1234069896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,8 +1062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead575a2ff4465147a41ab0a5d667a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Check: 0
-  timer: 1
   slider: {fileID: 1234069899}
   cooldownTime: 7
 --- !u!114 &1234069899
@@ -1631,7 +1630,7 @@ RectTransform:
   m_Father: {fileID: 1450482260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1930,6 +1929,7 @@ MonoBehaviour:
   Points: 0
   Suceed: 0
   BulletTimeActive: 0
+  MiniGameType: Slide
   MiniGameDamage: 0
 --- !u!1 &2065904461
 GameObject:
@@ -2022,8 +2022,8 @@ SceneRoots:
   - {fileID: 1359627268}
   - {fileID: 1219044604}
   - {fileID: 1670623389}
-  - {fileID: 2063866016}
   - {fileID: 809337928}
   - {fileID: 259449843}
   - {fileID: 733218651}
   - {fileID: 2009770671}
+  - {fileID: 2063866016}

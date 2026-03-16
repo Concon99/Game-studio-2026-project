@@ -33,6 +33,22 @@ public class BlurActive : MonoBehaviour
             StartCoroutine(DoBulletTime());
             StartCoroutine(SlowMoCoolDown());
         }
+
+        if (GameManager.Instance.MiniGameType == "Click")
+        {
+            slowDuration = 7f;
+            CoolDownTime = 6f;
+        }
+        if (GameManager.Instance.MiniGameType == "Click")
+        {
+            slowDuration = 7f;
+            CoolDownTime = 6f;
+        }
+        if (GameManager.Instance.MiniGameType == "Slide")
+        {
+            slowDuration = 10;
+            CoolDownTime = 6f;
+        }
     }
 
     IEnumerator DoBulletTime()
@@ -52,27 +68,13 @@ public class BlurActive : MonoBehaviour
         {
             if (SlowMoOver)
             {
-                print("Won Mini game!");
-                GameManager.Instance.Suceed = true;
-                GameManager.Instance.MiniGameDamage = 20;
                 break;
             }
 
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
-
-        if (!GameManager.Instance.Suceed && GameManager.Instance.Points >= 1)
-        {
-            print("Decent minigame!");
-            GameManager.Instance.Suceed = false;
-            GameManager.Instance.MiniGameDamage = 5;
-        }
-        else if (GameManager.Instance.Points <= 0)
-        {
-            print("failed mini game...");
-            GameManager.Instance.MiniGameDamage = 0;
-        }
+        
 
         StartCoroutine(_MiniGameAttack.WeaponAttack());
         GameManager.Instance.BulletTimeActive = false;

@@ -1,35 +1,40 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MiniGameTimer : MonoBehaviour
 {
-    public bool Check = false;
-    public float timer = 0f;
-
     public Slider slider;
     public float cooldownTime = 7f;
 
-    void Start()
-    {
-        slider.maxValue = 1f;
-        slider.value = 1f;
-        timer = cooldownTime;
-    }
+    private float timer = 0f;
+    private bool isRunning = false;
 
     void Update()
     {
-        if (GameManager.Instance.BulletTimeActive && !Check)
+        // Set cooldown based on minigame type
+        if (GameManager.Instance.MiniGameType == "Click")
+            cooldownTime = 7f;
+        else if (GameManager.Instance.MiniGameType == "Slide")
+            cooldownTime = 10;
+
+        // Update slider max value
+        slider.maxValue = cooldownTime;
+
+        // Start cooldown if bullet time is active
+        if (GameManager.Instance.BulletTimeActive && !isRunning)
         {
-            Check = true;
+            isRunning = true;
             StartCoroutine(CooldownLoop());
         }
 
-        if (!GameManager.Instance.BulletTimeActive)
+        // Stop and reset if bullet time ends
+        if (!GameManager.Instance.BulletTimeActive && isRunning)
         {
             StopAllCoroutines();
             timer = cooldownTime;
-            Check = false;
+            slider.value = timer;
+            isRunning = false;
         }
     }
 
@@ -40,14 +45,12 @@ public class MiniGameTimer : MonoBehaviour
         while (timer > 0f)
         {
             timer -= Time.unscaledDeltaTime;
-
-            float normalized = timer / cooldownTime;
-            slider.value = Mathf.Clamp01(normalized);
-
+            slider.value = Mathf.Clamp(timer, 0f, cooldownTime); // set value directly
             yield return null;
         }
 
         timer = 0f;
         slider.value = 0f;
+        isRunning = false;
     }
 }

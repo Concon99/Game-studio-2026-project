@@ -12,16 +12,21 @@ public class MiniGameTimer : MonoBehaviour
 
     void Update()
     {
-        // Set cooldown based on minigame type
         if (GameManager.Instance.MiniGameType == "Click")
+            cooldownTime = 7f;
+        else if (GameManager.Instance.MiniGameType == "Pop")
             cooldownTime = 7f;
         else if (GameManager.Instance.MiniGameType == "Slide")
             cooldownTime = 10;
+        else if (GameManager.Instance.MiniGameType == "Mouse")
+            cooldownTime = 12;
+        else if (GameManager.Instance.MiniGameType == "Luck")
+            cooldownTime = 7f;
+        else if (GameManager.Instance.MiniGameType == "X")
+            cooldownTime = 7f;
 
-        // Update slider max value
         slider.maxValue = cooldownTime;
 
-        // Start cooldown if bullet time is active
         if (GameManager.Instance.BulletTimeActive && !isRunning)
         {
             isRunning = true;

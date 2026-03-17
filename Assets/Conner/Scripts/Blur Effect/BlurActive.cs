@@ -49,6 +49,22 @@ public class BlurActive : MonoBehaviour
             slowDuration = 10;
             CoolDownTime = 6f;
         }
+        if (GameManager.Instance.MiniGameType == "Mouse")
+        {
+            slowDuration = 12;
+            CoolDownTime = 6f;
+        }
+        
+        if (GameManager.Instance.MiniGameType == "Luck")
+        {
+            slowDuration = 7;
+            CoolDownTime = 6f;
+        }
+        if (GameManager.Instance.MiniGameType == "X")
+        {
+            slowDuration = 7;
+            CoolDownTime = 6f;
+        }
     }
 
     IEnumerator DoBulletTime()

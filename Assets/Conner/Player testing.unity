@@ -733,11 +733,18 @@ MonoBehaviour:
   Click: {fileID: 1948397893335608657, guid: f94c08cb7dd03cc408050825d0ac1520, type: 3}
   Pop: {fileID: 8571744978460231097, guid: c79e1dc27f457dc40be6004b0096e69f, type: 3}
   Slide: {fileID: 567081084213563818, guid: 6e8f779847649c641839457ac30b76cc, type: 3}
+  mouse: {fileID: 191763155688899822, guid: 48157985263631c419761e23544c03e7, type: 3}
+  Luck: {fileID: 1948397893335608657, guid: c2c3e15f59262014f82c3ed78f8c0fee, type: 3}
   minPosition: {x: -8, y: -4}
   maxPosition: {x: 8, y: 4}
   MiniGame1Spawn: 1
   MiniGame3Spawn: 1.5
+  LuckSpawn: 0.5
+  MiniGame4RunTime: 12
   spawnPos: {x: 0, y: 0}
+  totalPerLine: 10
+  spacing: 1.5
+  spawnDelay: 0.5
   _BlurActive: {fileID: 356816858}
 --- !u!1 &1219044597
 GameObject:
@@ -1929,7 +1936,7 @@ MonoBehaviour:
   Points: 0
   Suceed: 0
   BulletTimeActive: 0
-  MiniGameType: Slide
+  MiniGameType: X
   MiniGameDamage: 0
 --- !u!1 &2065904461
 GameObject:

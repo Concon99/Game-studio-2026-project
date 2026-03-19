@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -7,6 +9,11 @@ public class EnemyHealth : MonoBehaviour
     public GameObject DamageEffect;
 
     public string visualDamage;
+    
+    public float pushAmount = 2f;     // how high it goes
+    public float pushDuration = 0.3f; // how long it takes
+
+    private bool isMoving = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,9 +52,34 @@ public class EnemyHealth : MonoBehaviour
                 textScript.ChangeText(visualDamage); // call the function
             } 
         }
+        
+        
+        
+        if (other.CompareTag("Pushback") && !isMoving)
+        {
+            StartCoroutine(SmoothPush());
+        }
     }
     
+    IEnumerator SmoothPush()
+    {
+        isMoving = true;
 
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = startPos + Vector3.up * pushAmount;
+
+        float time = 0f;
+
+        while (time < pushDuration)
+        {
+            transform.position = Vector3.Lerp(startPos, targetPos, time / pushDuration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPos;
+        isMoving = false;
+    }
     void Update()
     {
         if (Health <= 0)

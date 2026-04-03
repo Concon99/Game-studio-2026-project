@@ -22,6 +22,11 @@ public class PlayerHealth : MonoBehaviour
             Health -= 1;
             StartCoroutine(DamageEffect());
         }
+        else if (other.CompareTag("Bullet"))
+        {
+            Health -= 1;
+            StartCoroutine(DamageEffect());
+        }
     }
 
     void Update()

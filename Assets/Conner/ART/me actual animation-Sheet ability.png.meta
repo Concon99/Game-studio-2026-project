@@ -1,0 +1,475 @@
+fileFormatVersion: 2
+guid: b51b72094a5363948b01618c7b035855
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8693534164629595437
+    second: me actual animation-Sheet ability_0
+  - first:
+      213: 3215727324591997503
+    second: me actual animation-Sheet ability_1
+  - first:
+      213: 5778011608232080566
+    second: me actual animation-Sheet ability_2
+  - first:
+      213: -5568833021751522793
+    second: me actual animation-Sheet ability_3
+  - first:
+      213: 2937590550062784500
+    second: me actual animation-Sheet ability_4
+  - first:
+      213: 8167457071718534557
+    second: me actual animation-Sheet ability_5
+  - first:
+      213: -6350788409241276480
+    second: me actual animation-Sheet ability_6
+  - first:
+      213: -8102318284625883197
+    second: me actual animation-Sheet ability_7
+  - first:
+      213: -5633582328130763923
+    second: me actual animation-Sheet ability_8
+  - first:
+      213: 1585303404183780525
+    second: me actual animation-Sheet ability_9
+  - first:
+      213: 7764557723767072946
+    second: me actual animation-Sheet ability_10
+  - first:
+      213: 6373445340958719937
+    second: me actual animation-Sheet ability_11
+  - first:
+      213: 8794513290546200760
+    second: me actual animation-Sheet ability_12
+  - first:
+      213: -3700921864250768550
+    second: me actual animation-Sheet ability_13
+  - first:
+      213: 7080585328565052254
+    second: me actual animation-Sheet ability_14
+  - first:
+      213: -8075814766611160453
+    second: me actual animation-Sheet ability_15
+  - first:
+      213: 615088686637132067
+    second: me actual animation-Sheet ability_16
+  - first:
+      213: 5874029870617558610
+    second: me actual animation-Sheet ability_17
+  - first:
+      213: 691974946432371874
+    second: me actual animation-Sheet ability_18
+  - first:
+      213: -5548147457583651752
+    second: me actual animation-Sheet ability_19
+  - first:
+      213: -1857312888798701437
+    second: me actual animation-Sheet ability_20
+  - first:
+      213: -3106228654519561567
+    second: me actual animation-Sheet ability_21
+  - first:
+      213: 4666009492516142483
+    second: me actual animation-Sheet ability_22
+  - first:
+      213: -7445671050772155517
+    second: me actual animation-Sheet ability_23
+  - first:
+      213: 8880612122633589430
+    second: me actual animation-Sheet ability_24
+  - first:
+      213: 5744365512797009501
+    second: me actual animation-Sheet ability_25
+  - first:
+      213: -3281684214101624721
+    second: me actual animation-Sheet ability_26
+  - first:
+      213: 181298130540136916
+    second: me actual animation-Sheet ability_27
+  - first:
+      213: -159339989514949328
+    second: me actual animation-Sheet ability_28
+  - first:
+      213: -1817872723625084466
+    second: me actual animation-Sheet ability_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dad782dcbc5a5780800000000000000
+      internalID: -8693534164629595437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32c2dcc6fe80ac20800000000000000
+      internalID: 3215727324591997503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4b1c8c1fe9f2050800000000000000
+      internalID: 5778011608232080566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a09052fd787b2b0800000000000000
+      internalID: -5568833021751522793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff59009a0b64c820800000000000000
+      internalID: 2937590550062784500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d09060fe2a85170800000000000000
+      internalID: 8167457071718534557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf6187f6977dd7a0800000000000000
+      internalID: -6350788409241276480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfc8b3b278ce8f80800000000000000
+      internalID: -8102318284625883197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6309d678be71d1b0800000000000000
+      internalID: -5633582328130763923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac779bfb01200610800000000000000
+      internalID: 1585303404183780525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: me actual animation-Sheet ability_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b8e6238c1041cb60800000000000000
+      internalID: 7764557723767072946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e5c3edb13b19764f81452f4d41023ba
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      me actual animation-Sheet ability_0: -8693534164629595437
+      me actual animation-Sheet ability_1: 3215727324591997503
+      me actual animation-Sheet ability_10: 7764557723767072946
+      me actual animation-Sheet ability_2: 5778011608232080566
+      me actual animation-Sheet ability_3: -5568833021751522793
+      me actual animation-Sheet ability_4: 2937590550062784500
+      me actual animation-Sheet ability_5: 8167457071718534557
+      me actual animation-Sheet ability_6: -6350788409241276480
+      me actual animation-Sheet ability_7: -8102318284625883197
+      me actual animation-Sheet ability_8: -5633582328130763923
+      me actual animation-Sheet ability_9: 1585303404183780525
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

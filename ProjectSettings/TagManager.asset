@@ -9,6 +9,8 @@ TagManager:
   - PlayerAttackUltra
   - Blur
   - Pushback
+  - Bullet
+  - Reflect
   layers:
   - Default
   - TransparentFX

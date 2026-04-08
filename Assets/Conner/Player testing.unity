@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1862494671}
-  spirit: Mason
+  spirit: Detem
   color: {r: 1, g: 1, b: 1, a: 0}
   spriteRenderer: {fileID: 1862494672}
   spiritCoolDown: 5

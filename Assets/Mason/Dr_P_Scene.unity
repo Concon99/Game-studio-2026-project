@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 1670675507}
   - component: {fileID: 1670675506}
   - component: {fileID: 1670675509}
+  - component: {fileID: 1670675510}
   m_Layer: 0
   m_Name: DrP
   m_TagString: bullet
@@ -420,6 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4bdcececf706040b985a1b42cf6d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DrHealth: 100
 --- !u!212 &1670675507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -536,6 +538,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1670675510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670675505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f14c556b13a8f84db4ddbb91a2c714e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrSpeed: 0
+  Player: {fileID: 894966393}
+  idlestate: 0
+  noticestate: 0
+  dr_health: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
